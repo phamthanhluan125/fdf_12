@@ -1,4 +1,4 @@
-<tr class="center-vertical-td">
+<tr class="center-vertical-td product_item_<%= product.id %>">
   <td>
     <%= link_to product_path(domain_id: session[:domain_id]) do %>
       <div class="shop-product-image">
@@ -48,9 +48,9 @@
           data-dismiss="modal">
           <%= t "cancel" %>
         </button>
-        <%= link_to t("submit"),
-          dashboard_shop_product_path(product.shop, product), method: :delete,
-          class: "btn btn-add form-button" %>
+        <%= link_to t("submit"), dashboard_shop_product_path(product.shop, product),
+          method: :delete, remote: true, class: "btn btn-add form-button",
+          "data-dismiss": "modal" %>
       </div>
     </div>
   </div>

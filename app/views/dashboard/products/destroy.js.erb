@@ -1,0 +1,6 @@
+<% if @type == Settings.delete_fails %>
+  sweetAlert(I18n.t('api.error'), I18n.t('flash.danger.dashboard.order_product'), 'error');
+<% else %>
+  $('.product_item_<%= @product.id %>').remove();
+  sweetAlert(I18n.t('api.success'), I18n.t('flash.success.dashboard.delete_product'), 'success');
+<% end %>
